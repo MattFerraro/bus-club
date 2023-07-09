@@ -1,5 +1,6 @@
 <script>
 	import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
+	import { goto } from '$app/navigation';
 
 	const createNewUser = (event) => {
 		email = document.getElementById('email').value;
@@ -12,6 +13,7 @@
 				const user = userCredential.user;
 				// ..
 				console.log('Signed in as a user!', user);
+				goto('/');
 			})
 			.catch((error) => {
 				const errorCode = error.code;

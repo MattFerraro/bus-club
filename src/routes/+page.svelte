@@ -12,6 +12,8 @@
 		<h1>Main Feed</h1>
 		{#if $authStore.isLoggedIn}
 			<p>You are signed in as {$authStore.user.email}</p>
+		{:else}
+			<p>You are not signed in!</p>
 		{/if}
 	</div>
 </section>

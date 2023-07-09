@@ -1,5 +1,6 @@
 <script>
 	import { getAuth, signOut } from 'firebase/auth';
+	import { goto } from '$app/navigation';
 
 	const logout = () => {
 		console.log('Okay, logging out!');
@@ -8,6 +9,7 @@
 			.then(() => {
 				// Sign-out successful.
 				console.log('sign out successful!');
+				goto('/');
 			})
 			.catch((error) => {
 				// An error happened.
